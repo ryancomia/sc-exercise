@@ -10,5 +10,7 @@ COPY . .
 # install all required packages
 RUN pip install -r requirements.txt
 
+EXPOSE 9090
+
 # initialize application server
 CMD ["uwsgi", "app.ini"]
