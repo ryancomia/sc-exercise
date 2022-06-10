@@ -2,13 +2,13 @@ version: '3'
 
 services:
   frontend:
-    build: ../react
+    build: react
     image: react-frontend
     container_name: frontend
     networks:
       - sub-ethx
   backend:
-    build: ../flask
+    build: flask
     image: flask-backend
     container_name: backend
     networks:
@@ -16,7 +16,7 @@ services:
     ports:
       - "9090:9090"     
   revproxy:
-    build: ../nginx
+    build: nginx
     image: reverse-proxy
     container_name: revproxy
     networks:
