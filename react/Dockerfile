@@ -15,7 +15,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json .
 
 # install node packages inside the docker env 
-RUN npm i
+RUN npm install
 
 # copy over the files inside the docker env
 COPY . .
