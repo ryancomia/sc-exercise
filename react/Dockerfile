@@ -3,7 +3,7 @@
 # # Stage 1 # #
 
 # lets pull the node base image / node ver.16 for some reason seems to be stable for this code
-FROM node:16 AS base
+FROM node:16 AS stage1
 
 # set the working directory
 WORKDIR /app
@@ -35,10 +35,7 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 
 # Copies static resources from builder stage
-COPY --from=base /app/build .
-
-# logical expose
-EXPOSE 80
+COPY --from=stage1 /app/build .
 
 # define entry
 ENTRYPOINT [ "nginx","-g","daemon off;" ]
