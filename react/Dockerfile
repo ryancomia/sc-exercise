@@ -37,7 +37,7 @@ RUN rm -rf ./*
 # Copies static resources from builder stage
 COPY --from=stage1 /app/build .
 
-EXPOSE 80
+#EXPOSE 80
 
 # define entry
 ENTRYPOINT [ "nginx","-g","daemon off;" ]
