@@ -31,8 +31,8 @@ jobs:
         with:
            aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
            aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-           application_name: MyApplicationName
-           environment_name: MyApplication-Environment
+           application_name: sc-exercise-app
+           environment_name: Scexerciseapp-env
            version_label: "sc-exercise-${{ steps.format-time.outputs.replaced }}"
            region: ap-southeast-1
            deployment_package: deployment.zip
