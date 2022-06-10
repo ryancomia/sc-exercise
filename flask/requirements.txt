@@ -1,0 +1,6 @@
+flask
+CORS
+psutil
+flask_cors
+jsonify
+uwsgi
