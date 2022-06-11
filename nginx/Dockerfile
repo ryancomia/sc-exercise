@@ -1,5 +1,5 @@
 # pull the official nginx stable
-FROM nginx:stable
+FROM nginx:stable-alpine
 
 
 # Set working directory to nginx resources directory
