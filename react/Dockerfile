@@ -26,7 +26,9 @@ RUN npm run build
 # # Stage 2 # #
 
 # lets pull the nginx base image
-FROM nginx:stable
+FROM nginx:stable-alpine
+
+EXPOSE 3000
 
 # set the working directory
 WORKDIR /usr/share/nginx/html
@@ -37,8 +39,7 @@ RUN rm -rf ./*
 # Copies static resources from builder stage
 COPY --from=stage1 /app/build .
 
-#EXPOSE 80
 
 # define entry
-ENTRYPOINT [ "nginx","-g","daemon off;" ]
+#ENTRYPOINT [ "nginx","-g","daemon off;" ]
 
