@@ -1,4 +1,3 @@
-# test remove reverse proxy
 version: '3'
 
 services:
@@ -8,8 +7,6 @@ services:
     container_name: frontend
     networks:
       - sub-ethx
-    ports:
-      - "80:80"  
   backend:
     build: flask
     image: flask-backend
@@ -18,6 +15,14 @@ services:
       - sub-ethx
     ports:
       - "9090:9090"     
+  revproxy:
+    build: nginx
+    image: reverse-proxy
+    container_name: revproxy
+    networks:
+      - sub-ethx
+    ports:
+      - "80:80"
 networks:
     sub-ethx:
 
