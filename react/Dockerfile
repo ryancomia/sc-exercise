@@ -26,9 +26,9 @@ RUN npm run build
 # # Stage 2 # #
 
 # lets pull the nginx base image
-FROM nginx:stable-alpine
+FROM nginx:stable
 
-EXPOSE 3000
+EXPOSE 80
 
 # set the working directory
 WORKDIR /usr/share/nginx/html
@@ -41,5 +41,5 @@ COPY --from=stage1 /app/build .
 
 
 # define entry
-#ENTRYPOINT [ "nginx","-g","daemon off;" ]
+ENTRYPOINT [ "nginx","-g","daemon off;" ]
 
