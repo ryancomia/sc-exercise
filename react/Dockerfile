@@ -23,13 +23,14 @@ COPY . .
 # optimize packages
 RUN npm run build
 
+#logical expose
+#EXPOSE 3000
+
 # # Stage 2 # #
 
 # lets pull the nginx base image
 FROM nginx:stable
 
-#logical expose
-#EXPOSE 3000
 
 # set the working directory
 WORKDIR /usr/share/nginx/html
