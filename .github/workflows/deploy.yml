@@ -30,8 +30,8 @@ jobs:
         with:
            aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
            aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-           application_name: smartcow-testapp
-           environment_name: Smartcowtestapp-env
+           application_name: smartcow-devops-app
+           environment_name: Smartcowdevopsapp-env
            version_label: "sc-exercise-${{ steps.format-time.outputs.replaced }}"
            region: ap-southeast-1
            deployment_package: deployment.zip
