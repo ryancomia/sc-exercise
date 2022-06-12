@@ -1,0 +1,36 @@
+name: Docker Image CI
+on:
+  push:
+    branches: [feature/kubernetes]
+    paths: .github/workflows/build.yml
+  pull_request:
+    branches: [feature/kubernetes]
+    paths: .github/workflows/build.yml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: docker login
+      env:
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}
+        DOCKER_PASS: ${{ secrets.DOCKER_PASS }
+    
+    - name: Build Docker flask image
+      run: |
+        docker build ./flask --file Dockerfile -t sc-exercise/flask:1.0.0
+
+    -  name: build docker react image
+       run: |
+        docker build ./react --file Dockerfile -tag sc-exercise/react:1.0.0
+        
+    -  name: build docker nginx image
+       run: |
+        docker build ./nginx --file Dockerfile -t sc-exercise/nginx:1.0.0
+
+    -  name: push container to docker registry
+       run: |
+          docker push sc-exercise/flask:1.0.0
+          docker push sc-exercise/react:1.0.0
+          docker push sc-exercise/nginx:1.0.0
+          
