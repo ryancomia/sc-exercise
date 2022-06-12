@@ -2,9 +2,10 @@ name: Docker Image CI
 on:
   push:
     branches: [stage]
-
+    paths: .github/workflows/build-img.yml
   pull_request:
     branches: [stage]
+    paths: .github/workflows/build-img.yml
 jobs:
   build:
     runs-on: ubuntu-latest
