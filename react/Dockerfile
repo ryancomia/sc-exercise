@@ -1,5 +1,4 @@
 # Using Multi-Stage Docker
-
 # # Stage 1 # #
 
 # lets pull the node base image / node ver.16 for some reason seems to be stable for this code
@@ -22,9 +21,6 @@ COPY . .
 
 # optimize packages
 RUN npm run build
-
-#logical expose
-#EXPOSE 3000
 
 # # Stage 2 # #
 
