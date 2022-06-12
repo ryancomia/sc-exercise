@@ -20,7 +20,7 @@ class App extends Component {
 
   async loadData() {
     try {
-      const res = await fetch('http://smartcowtestapp-env.eba-mqh2ba2q.ap-southeast-1.elasticbeanstalk.com/stats');
+      const res = await fetch('http://smartcowdevopsapp-env.eba-rwbfpxum.ap-southeast-1.elasticbeanstalk.com/stats');
       const blocks = await res.json();
       const ram = blocks.ram;
       const cpu = blocks.cpu;
