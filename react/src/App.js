@@ -20,7 +20,7 @@ class App extends Component {
 
   async loadData() {
     try {
-      const res = await fetch('http://localhost/stats');
+      const res = await fetch('http://sctestappv5-env.eba-m3f3anqd.ap-southeast-1.elasticbeanstalk.com/stats');
       const blocks = await res.json();
       const ram = blocks.ram;
       const cpu = blocks.cpu;
