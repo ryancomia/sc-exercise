@@ -1,11 +1,12 @@
 import psutil
 from flask import Flask, jsonify
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 CORS(app)
 
 @app.route('/stats')
+@cross_origin()
 def stats():
     cpu = psutil.cpu_percent()
     ram = psutil.virtual_memory().percent
@@ -16,3 +17,4 @@ def stats():
 if __name__ == "__main__":
     #app.debug = True
     app.run(host="0.0.0.0", port=9090)
+

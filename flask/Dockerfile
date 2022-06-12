@@ -13,6 +13,7 @@ RUN pip3 install -r requirements.txt
 EXPOSE 9090
 
 # initialize application server
+
 #CMD ["uwsgi", "app.ini"]
 
 CMD ["gunicorn", "-b", "0.0.0.0:9090", "app:app" ]
