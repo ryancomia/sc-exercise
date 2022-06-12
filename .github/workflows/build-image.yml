@@ -1,7 +1,8 @@
 name: Docker Image CI
 on:
   push:
-    branches: [ stage ]
+    branches:
+      - stage
 jobs:
   build:
     runs-on: ubuntu-latest
