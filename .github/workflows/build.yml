@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DOCKER_REPOSITORY: projectdharma
-      IMAGE_NAME1: flask-app
-      IMAGE_NAME2: react-app
-      IMAGE_NAME3: nginx-app
+      IMAGE_NAME1: flask-appx
+      IMAGE_NAME2: react-appx
+      IMAGE_NAME3: nginx-appx
       IMAGE_TAG: ${{ github.run_number }} 
           
     steps:
