@@ -1,0 +1,37 @@
+name: Deploy to AWS Beanstalk
+on:
+  push:
+    #branches: [ main ]
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@master
+      
+      - name: Generate Deployment Package
+        run: zip -r deployment.zip * -x "*node_modules**.git*"
+
+      - name: Create a Timestamp
+        uses: gerred/actions/current-time@master
+        id: current-time
+        
+      - name: String Replacement
+        uses: frabert/replace-string-action@v2.0
+        id: format-time
+        with:
+          pattern: '[:\.]+'
+          string: '${{ steps.current-time.outputs.time}}'
+          replace-with: '='
+          flags: 'g'
+
+      - name: Deploy to Elastic Beanstalk
+        uses: einaregilsson/beanstalk-deploy@v20
+        with:
+           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+           application_name: smartcow-testapp
+           environment_name: Smartcowtestapp-env
+           version_label: "sc-exercise-${{ steps.format-time.outputs.replaced }}"
+           region: ap-southeast-1
+           deployment_package: deployment.zip

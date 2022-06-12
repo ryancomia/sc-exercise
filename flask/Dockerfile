@@ -8,10 +8,12 @@ WORKDIR /app
 COPY . .
 
 # install all required packages
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
-# logical exposing of port
 EXPOSE 9090
 
 # initialize application server
-CMD ["uwsgi", "app.ini"]
+
+#CMD ["uwsgi", "app.ini"]
+
+CMD ["gunicorn", "-b", "0.0.0.0:9090", "app:app" ]
