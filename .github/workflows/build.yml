@@ -1,36 +1,53 @@
-name: Docker Image CI
+name: Deploy to Container Registry
+
 on:
   push:
-    branches: [feature/kubernetes]
+    branches: [ feature/kubernetes ]
     paths: .github/workflows/build.yml
   pull_request:
-    branches: [feature/kubernetes]
-    paths: .github/workflows/build.yml
+    branches:  none # [ main ]
+  workflow_dispatch:
+
 jobs:
-  build:
+
+  build-deploy-aks:
     runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: docker login
-      env:
-        DOCKER_USER: ${{ secrets.DOCKER_USER }}
-        DOCKER_PASS: ${{ secrets.DOCKER_PASS }
-    
-    - name: Build Docker flask image
-      run: |
-        docker build ./flask --file Dockerfile -t sc-exercise/flask:1.0.0
-
-    -  name: build docker react image
-       run: |
-        docker build ./react --file Dockerfile -tag sc-exercise/react:1.0.0
-        
-    -  name: build docker nginx image
-       run: |
-        docker build ./nginx --file Dockerfile -t sc-exercise/nginx:1.0.0
-
-    -  name: push container to docker registry
-       run: |
-          docker push sc-exercise/flask:1.0.0
-          docker push sc-exercise/react:1.0.0
-          docker push sc-exercise/nginx:1.0.0
+    env:
+      DOCKER_REPOSITORY: projectdharma
+      IMAGE_NAME1: flask-app
+      IMAGE_NAME2: react-app
+      IMAGE_NAME3: nginx-app
+      IMAGE_TAG: ${{ github.run_number }} 
           
+    steps:
+
+    - name: Git Checkout
+      uses: actions/checkout@v2
+  
+    - name: Build Docker Image Flask
+      run:
+        docker build ./flask/ --file ./flask/Dockerfile --tag $DOCKER_REPOSITORY/$IMAGE_NAME1:$GITHUB_RUN_NUMBER  --no-cache
+    
+    - name: Build Docker Image NGINX
+      run:
+        docker build ./nginx/ --file ./nginx/Dockerfile --tag $DOCKER_REPOSITORY/$IMAGE_NAME2:$GITHUB_RUN_NUMBER  --no-cache
+
+    - name: Build Docker Image React
+      run:
+        docker build ./react/ --file ./react/Dockerfile --tag $DOCKER_REPOSITORY/$IMAGE_NAME3:$GITHUB_RUN_NUMBER  --no-cache
+
+    - name: Login to Docker Hub
+      run: |
+        docker login --username=${{ secrets.DOCKER_USER }} --password=${{ secrets.DOCKER_PASS }} 
+  
+    - name: Push Flask Image to Docker Hub
+      run:
+        docker push $DOCKER_REPOSITORY/$IMAGE_NAME1:$GITHUB_RUN_NUMBER
+    
+    - name: Push NGINX image to Docker Hub
+      run:
+        docker push $DOCKER_REPOSITORY/$IMAGE_NAME2:$GITHUB_RUN_NUMBER
+    
+    - name: Push React Image to Docker Hub
+      run:
+        docker push $DOCKER_REPOSITORY/$IMAGE_NAME3:$GITHUB_RUN_NUMBER
