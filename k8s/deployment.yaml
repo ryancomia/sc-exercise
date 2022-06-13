@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: react-deploy
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: web 
+  template:
+    metadata:
+      labels:
+        component: web
+    spec:
+      containers:
+       - name: frontend 
+         image: projectdharma/react-app-b:latest
+         ports:
+         - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: flask-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: flask
+  template:
+    metadata:
+      labels:
+        component: flask
+    spec:
+      containers:
+        - name: flask
+          image: projectdharma/flask-appx:3
+          ports:
+            - containerPort: 9090
