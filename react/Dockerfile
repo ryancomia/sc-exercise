@@ -31,8 +31,7 @@ FROM nginx:stable
 # set the working directory
 WORKDIR /usr/share/nginx/html
 
-# Remove default nginx static resources
-RUN rm -rf ./*
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 
 # Copies static resources from builder stage
 COPY --from=stage1 /app/build .
