@@ -2,7 +2,7 @@
 
 Branch Automation: YES
 
-      A push to feature/kubernetes branch will trigger a workflow using git-hub actions using .github/workflows/build.yml
+      A push to feature/kubernetes branch will trigger a workflow using github-actions using .github/workflows/build.yml
       It checksout the source code, builds a coresponding images,and pushes it to docker hub registry
 
 How to Use
@@ -12,6 +12,7 @@ How to Use
 Requires:
       
       Git - install guide here: https://github.com/git-guides/install-git
+      Docker Access Token (for github-actions)
       Docker Hub Login - install guide here: https://hub.docker.com/
 
 Steps:
