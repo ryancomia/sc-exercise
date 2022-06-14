@@ -1,6 +1,6 @@
 # Task 2 - Cloud Deployment
 
-Branch Automated: YES
+Branch Automation: YES
 
   a push to main branch will trigger a workflow using git-hubaction. it will checkout the source code, packages it and deploys to 
   AWS Beanstalk environment
