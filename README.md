@@ -28,9 +28,8 @@ Steps:
 3. Push it back to branch feature/kubernetes 
  
         $ git push
-
-
-                 - github workflow will then trigger the actions to build and push the new image from the source code
+        
+          - github workflow will then trigger the actions to build and push the new image from the source code
 
 5. Login to Docker hub to see the product images
 
@@ -77,3 +76,4 @@ Finally to verify the app. head over to your browser:
          smartcow.local/
 
 
+Build Walkthrough:
