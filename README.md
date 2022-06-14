@@ -15,10 +15,12 @@ Steps:
 
 1. clone the repo  
          
-         $ git clone https://github.com/ryancomia/sc-exercise.git
+         $ git clone -b dev https://github.com/ryancomia/sc-exercise.git
 
-2. From your local machine terminal
+2. From your local machine terminal type
 
         $ docker compose up --build
 
-3. 
+3. Verify that app is working from the browser
+
+         127.0.0.1/
