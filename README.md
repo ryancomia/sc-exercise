@@ -15,6 +15,9 @@ Requires:
       Docker Access Token (for github-actions)
       Docker Hub Login - install guide here: https://hub.docker.com/
 
+Assumes:
+      Docker DOCKER_USER | DOCKER_PASS has been stored into Github Secrets
+
 Steps:
 1. clone the repository and switch directory  
          
