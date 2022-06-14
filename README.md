@@ -1,6 +1,6 @@
 # Task 1 - Containerize the App - Run using Docker Compose
 
-BRANCH AUTOMATION: NO
+Branch Automation: NO
 
 How to Use
 
