@@ -19,25 +19,25 @@ Steps:
 
 1. clone the repository and switch directory  
          
-         $ git clone -b main https://github.com/ryancomia/sc-exercise.git
-         $ cd /sc-exercise            
+       $ git clone -b main https://github.com/ryancomia/sc-exercise.git
+       $ cd /sc-exercise            
 
 2 Modify or update as necessary then 
          
-         $ git add . / 
-         $ git commit -m "my_changes_etc"
+       $ git add . / 
+       $ git commit -m "my_changes_etc"
 
 3. Update the build.yml application_name / environment_name based from the Elastic Beanstalk env
 
 4. Push it back to branch main
  
-        $ git push
+       $ git push
         
-          - github workflow will then trigger the actions to deploy it to AWS
+        - github workflow will then trigger the actions to deploy it to AWS
 
 5. Wait until the action succeeds. it takes 10-15mins for the environment update, afterwhich you can check the app by browsing
 
         http://smartcowdevopsapp-env.eba-rwbfpxum.ap-southeast-1.elasticbeanstalk.com/
         
         
-note: the example uses elastic-beanstalk endpoint. in a Production setup, this needs to be CNAME'd of an actual URL. otherwise each EB app generation will create a different beanstalk endpoint
+note: the example uses elastic-beanstalk endpoint url. in a Production setup, this needs to be CNAME'd to an actual DOMAIN-URL. otherwise each EB app generation will create a different beanstalk endpoint
