@@ -12,7 +12,6 @@ How to Use
 Requires:
       
       Git - install guide here: https://github.com/git-guides/install-git
-      Docker Access Token (for github-actions)
       Docker Hub Login - install guide here: https://hub.docker.com/
 
 Assumes:
