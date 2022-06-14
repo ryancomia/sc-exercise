@@ -24,6 +24,3 @@ Steps:
 3. Verify that app is working from the browser
 
          127.0.0.1/
-
-
-Build Walkthrough : 
