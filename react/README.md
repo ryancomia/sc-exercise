@@ -1,17 +1,17 @@
 # Task 3 - Minikube/Kubernetes - Deployment
 
-# # Note: This branch holds the automation to create Docker Images from the Source Code # #
+This branch holds the automation to create Docker Images from the Source Code
 
 How to Use
 
-# Part 1 - build image and push to Docker CR
+# Part 1 - build image and push to Docker Hub
 
 Requires:
       
       Git - install guide here: https://github.com/git-guides/install-git
 
 Steps:
-1. From your local env clone this repo  
+1. clone this repo  
          
          $ git clone https://github.com/ryancomia/sc-exercise.git
 
@@ -49,17 +49,15 @@ Steps:
         
 2. Add an entry to host file 
  
-        $ sudo vi /etc/hosts 
-          add entry MINI_KUBE_IP smartcow.local
+        $ sed -i "mini_kube_ip  smartcow.local" /etc/hosts
       
 3. From the same source code on Part 1. switch directory 
 
         $ cd ./k8s
 
-4. Create a Namespace for the app 
+4. Create a Namespace and set context
         
-        $ kubectl create ns
-         Optional: Switch to the crated ns context using 
+        $ kubectl create ns         
         $ kubectl config set-context --current --namespace=MY_NS_NAME
         
 5. Deploy using
@@ -73,6 +71,8 @@ Steps:
         $ kubectl get ingress
         
 
-Finally to verify if the app works, go over to your browser: smartcow.local/
+Finally to verify the app. head over to your browser: 
+
+         smartcow.local/
 
 
