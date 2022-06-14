@@ -4,8 +4,6 @@ Branch Automation: NO
 
 How to Use
 
-
-
 Requires:
       
       Docker and Docker Compose - install guide here: https://docs.docker.com/get-docker/
@@ -14,12 +12,12 @@ Requires:
 Steps:
 1. clone the repository and switch directory
          
-         $ git clone -b dev https://github.com/ryancomia/sc-exercise.git
-         $ cd /sc-exercise
+       $ git clone -b dev https://github.com/ryancomia/sc-exercise.git
+       $ cd /sc-exercise
 
 2. From your local machine terminal type
 
-        $ docker compose up --build
+       $ docker compose up --build
 
 3. Verify that app is working from the browser
 
