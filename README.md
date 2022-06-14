@@ -17,7 +17,7 @@ Requires:
 
 Assumes:
       
-      Docker DOCKER_USER | DOCKER_PASS has been stored into Github Secrets
+      Docker access keys DOCKER_USER | DOCKER_PASS has been stored into Github Secrets
 
 Steps:
 1. clone the repository and switch directory  
