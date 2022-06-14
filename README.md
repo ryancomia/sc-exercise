@@ -49,7 +49,7 @@ Steps:
         
 2. Add an entry to host file 
  
-        $ sed -i "mini_kube_ip  smartcow.local" /etc/hosts
+        $ sudo sed -i "mini_kube_ip  smartcow.local" /etc/hosts
       
 3. From the same source code on Part 1. switch directory 
 
