@@ -1,9 +1,9 @@
-# Task 3 - Minikube/Kubernetes - Deployment
+# Task 3 - minikube/kubernetes - deployment
 
 Branch Automation: YES
 
-      A push to feature/kubernetes branch will trigger a workflow using git-hubaction using .github/workflows/build.yml
-      It checksout the source code, builds coresponding images,and pushes it to docker hub registry
+      A push to feature/kubernetes branch will trigger a workflow using git-hub actions using .github/workflows/build.yml
+      It checksout the source code, builds a coresponding images,and pushes it to docker hub registry
 
 How to Use
 
