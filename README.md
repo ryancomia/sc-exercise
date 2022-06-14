@@ -3,7 +3,7 @@
 Branch Automation: YES
 
       A push to feature/kubernetes branch will trigger a workflow using github-actions using .github/workflows/build.yml
-      It checksout the source code, builds a coresponding images,and pushes it to docker hub registry
+      It checks-out the source code, build coresponding images,and pushes it to docker hub registry
 
 How to Use
 
@@ -16,24 +16,25 @@ Requires:
       Docker Hub Login - install guide here: https://hub.docker.com/
 
 Assumes:
+      
       Docker DOCKER_USER | DOCKER_PASS has been stored into Github Secrets
 
 Steps:
 1. clone the repository and switch directory  
          
-         $ git clone -b feature/kubernetes https://github.com/ryancomia/sc-exercise.git
-         $ cd /sc-exercise            
+       $ git clone -b feature/kubernetes https://github.com/ryancomia/sc-exercise.git
+       $ cd /sc-exercise            
 
 2 Modify or update as necessary then 
          
-         $ git add . / 
-         $ git commit -m "my_changes_etc"
+       $ git add . / 
+       $ git commit -m "my_changes_etc"
 
 3. Push it back to branch feature/kubernetes 
  
-        $ git push
-        
-          - github workflow will then trigger the actions to build and push the new image from the source code
+       $ git push
+       
+       - github workflow will then trigger the actions to build and push the new image from the source code
 
 5. Login to Docker hub to see the product images
 
