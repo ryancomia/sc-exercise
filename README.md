@@ -14,18 +14,14 @@ Requires:
 Steps:
 1. clone this repo  
          
-         $ git clone https://github.com/ryancomia/sc-exercise.git
+         $ git clone -b feature/kubernetes https://github.com/ryancomia/sc-exercise.git
 
-2. Switch to feature/kubernets branch 
-       
-         $ git checkout -b feature/kubernetes
-
-3. Modify or update as necessary then 
+2 Modify or update as necessary then 
          
          $ git add . / 
          $ git commit -m "my_changes_etc"
 
-4. Push it back to feature/kubernetes 
+3. Push it back to branch feature/kubernetes 
  
         $ git push
 
