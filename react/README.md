@@ -7,7 +7,8 @@ How to Use
 # Part 1 - build image and push to Docker CR
 
 Requires:
-      a. Git - install guide here: https://github.com/git-guides/install-git
+      
+      Git - install guide here: https://github.com/git-guides/install-git
 
 Steps:
 1. From your local env clone this repo  
@@ -37,8 +38,9 @@ Steps:
 # Part 2 - deploy to minikube
 
 Requires:
-       a. Minikube - install guide here: https://minikube.sigs.k8s.io/docs/start/
-       b. Kubectl - install guide here: https://kubernetes.io/docs/tasks/tools/
+      
+      Minikube - install guide here: https://minikube.sigs.k8s.io/docs/start/
+      Kubectl - install guide here: https://kubernetes.io/docs/tasks/tools/
   
 Steps:
 1. Before we begin lets get the minikube exposed IP 
