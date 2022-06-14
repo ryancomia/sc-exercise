@@ -8,7 +8,7 @@ The Sequences of steps i took to containarize the app could be found on the PDF 
 
 Requires:
       
-      Docker and Docker Compose = install guide here: https://docs.docker.com/get-docker/
+      Docker and Docker Compose - install guide here: https://docs.docker.com/get-docker/
       Git - install guide here: https://github.com/git-guides/install-git
 
 Steps:
