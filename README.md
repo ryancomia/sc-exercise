@@ -9,6 +9,7 @@ How to Use
 Requires:
       
       Git - install guide here: https://github.com/git-guides/install-git
+      Docker Hub Login- https://hub.docker.com/
 
 Steps:
 1. clone this repo  
