@@ -75,6 +75,3 @@ Steps:
 Finally to verify the app. head over to your browser: 
 
          smartcow.local/
-
-
-Build Walkthrough:
