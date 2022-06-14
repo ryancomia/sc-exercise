@@ -2,7 +2,7 @@
 
 Branch Automation: YES
 
-      A push to feature/kubernetes branch will trigger a workflow using git-hubaction. using .github/workflows/build.yml
+      A push to feature/kubernetes branch will trigger a workflow using git-hubaction using .github/workflows/build.yml
       It checksout the source code, builds coresponding images,and pushes it to docker hub registry
 
 How to Use
